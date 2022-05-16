@@ -9,3 +9,4 @@ class Metric{
         this.unit = unit;
     }
 }
+export{Metric};

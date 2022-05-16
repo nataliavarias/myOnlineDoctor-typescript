@@ -34,3 +34,4 @@ class Rating {
         this._comment = comment;
     }
 }
+export{Rating};

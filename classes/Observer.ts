@@ -1,7 +1,6 @@
-abstract class Observer{
+interface Observer {
+  //Methods
 
+  update(context: string): void;
 }
-
-//Methods
-
-function update(){}
+export { Observer };

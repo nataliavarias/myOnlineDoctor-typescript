@@ -1,12 +1,12 @@
-import 'Metric.ts';
+import {Metric} from './Metric';
 
-class RangedMetric extends TextMetrics{
+class RangedMetric extends Metric{
     //Atributos
     range:[number, number];
 
     //Constructor
     constructor(name:string, unit:string, range:[number,number],  ) {
-        super();
+        super(name,unit);
         this.range = range;
     }
 
