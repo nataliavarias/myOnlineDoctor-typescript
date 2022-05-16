@@ -1,4 +1,5 @@
 import { Observer } from "./Observer";
+
 interface Subject {
   //Methods
 

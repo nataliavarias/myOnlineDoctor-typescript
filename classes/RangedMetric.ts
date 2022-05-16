@@ -2,12 +2,16 @@ import {Metric} from './Metric';
 
 class RangedMetric extends Metric{
     //Atributos
-    range:[number, number];
+    private _range: [number, number];
 
-    //Constructor
-    constructor(name:string, unit:string, range:[number,number],  ) {
-        super(name,unit);
-        this.range = range;
+    //Getter y setter
+    public get range(): [number, number] {
+        return this._range;
     }
+    public set range(value: [number, number]) {
+        this._range = value;
+    }
+
+
 
 }

@@ -27,11 +27,6 @@ class Rating {
         this._comment = theComment;
     }
 
-    //Constructor
 
-    constructor(score:number, comment:string){
-        this._score=score;
-        this._comment = comment;
-    }
 }
 export{Rating};

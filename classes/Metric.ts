@@ -1,12 +1,24 @@
 class Metric{
     //Atributos
-    name:string;
-    unit:string;
+    private _name: string;
+    private _unit: string;
 
-    //Constructor
-    constructor(name:string, unit:string){
-        this.name = name;
-        this.unit = unit;
+    //Getters y setters
+
+    public get name(): string {
+        return this._name;
     }
+    public set name(value: string) {
+        this._name = value;
+    }
+
+    public get unit(): string {
+        return this._unit;
+    }
+    public set unit(value: string) {
+        this._unit = value;
+    }
+
+
 }
 export{Metric};
