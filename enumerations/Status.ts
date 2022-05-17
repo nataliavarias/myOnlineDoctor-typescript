@@ -3,7 +3,7 @@ enum Status {
   Scheduled = "Scheduled",
   Confirmed = "Confirmed",
   Completed = "Completed",
-  Canceled = "Canceled",
+  Cancelled = "Cancelled",
   Active = "Active",
   Suspended = "Suspended",
 }

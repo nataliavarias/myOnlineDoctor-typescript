@@ -4,7 +4,16 @@ class AverageRating {
   private _averageScore: number;
   private _scores: Rating[] = [];
 
-  //    getters and setters
+  //Methods
+    addRating(rating: Rating):void{
+
+    }
+
+    calculateAverageScore():number{
+        return 0;
+    }
+
+  //Getters and setters
 
   public get averageScore(): number {
     return this._averageScore;

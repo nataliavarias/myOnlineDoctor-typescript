@@ -143,3 +143,5 @@ class CheckUp {
     this._changeLog = value;
   }
 }
+
+export { CheckUp };

@@ -2,6 +2,12 @@ import { Subject } from "./Subject";
 import { Observer } from "./Observer";
 import { PaymentMethod } from "./PaymentMethod";
 import { Subscription } from "./Subscription";
+import { CheckUp } from "./CheckUp";
+import { Status } from "../enumerations/Status";
+import { MedicalRecord } from "./MedicalRecord";
+import { Doctor } from "./Doctor";
+import { GeoLocation } from "./GeoLocation";
+import { Specialty } from "./Specialty";
 
 class Patient implements Subject {
   private _idPatient: number;
@@ -14,7 +20,8 @@ class Patient implements Subject {
   private _paymentMethods: PaymentMethod[] = [];
   private _subscription: Subscription;
   private _observers: Observer[] = [];
-
+  private _medicalRecord: MedicalRecord;
+ 
   //    Methods
 
   addObserver(observer: Observer): void {
@@ -42,6 +49,60 @@ class Patient implements Subject {
     }
   }
 
+  requestCheckUp(modality: string, doctor: Doctor): CheckUp{
+    let checkUp = new CheckUp();
+    checkUp.idCheckUp = 1574;
+    checkUp.modality = modality;
+    checkUp.doctor = doctor;
+    checkUp.patient = this; 
+    checkUp.changeStatus(Status.Requested);
+
+    return checkUp;
+  }  
+
+  confirmCheckUp(checkUp: CheckUp): void{
+    checkUp.changeStatus(Status.Confirmed);   
+  }
+
+  cancelCheckUp(checkUp: CheckUp): void{
+    checkUp.changeStatus(Status.Cancelled);
+  }
+
+  rateCheckUp(checkUp: CheckUp, score: number, comment: string):void{
+
+  }
+
+  readMedicalRecord():void{
+
+  }
+
+  addPaymentMethod(paymentMethod: PaymentMethod):void{
+
+  }
+
+  removePaymentMethod(paymentMethod: PaymentMethod):void{
+
+  }
+
+  renewSubscription(subscription: Subscription):void{
+
+  }
+
+  cancelSubscription(subscription: Subscription):void{
+    
+  }
+
+  searchDoctorsGeolocation(geolocation: GeoLocation, doctor:Doctor[]):void{
+    
+  }
+
+  searchDoctorsSpecialty(specialty: Specialty, doctor:Doctor[]):void{
+    
+  }
+
+  searchTopTenDoctors():void{
+    
+  }
   //    getters and setters
 
   public get idPatient(): number {
@@ -113,5 +174,13 @@ class Patient implements Subject {
   public set observers(value: Observer[]) {
     this._observers = value;
   }
+
+  public get medicalRecord(): MedicalRecord {
+    return this._medicalRecord;
+  }
+  public set medicalRecord(value: MedicalRecord) {
+    this._medicalRecord = value;
+  }
+
 }
 export { Patient };
