@@ -21,7 +21,6 @@ class Patient implements Subject {
     let aux: Observer[] = this.observers;
     aux.push(observer);
     this.observers = aux;
-    console.log("agregue");
   }
 
   removeObserver(observer: Observer): void {
@@ -40,7 +39,6 @@ class Patient implements Subject {
     let limit: number = aux.length;
     for (let c = 0; c < limit; c++) {
       aux[c].update(context);
-      console.log("itere");
     }
   }
 
